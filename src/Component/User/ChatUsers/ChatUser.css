@@ -1,0 +1,132 @@
+.chat-user {
+  padding: 8px;
+  gap: 8px;
+  border-radius: 4px 0px 0px 0px;
+  display: flex;
+  align-items: center;
+  background-color: #f5f7fb;
+  cursor: pointer;
+}
+
+.chat-user:hover,
+.chat-user.active {
+  background-color: #5b8cec;
+}
+
+.chat-user:hover .userName,
+.chat-user.active .userName {
+  color: white;
+}
+
+.chat-user:hover .latestUserMessage-container,
+.chat-user.active .latestUserMessage-container {
+  color: white;
+}
+
+.avatar img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.user-details-message {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin-left: 8px;
+}
+
+.userName {
+  font-family: "SF Pro Text", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 21px;
+  letter-spacing: -0.33px;
+  text-align: left;
+  color: #000000;
+}
+
+.user-details-message p {
+  margin: 0;
+}
+
+.latestUserMessage-count-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.latestUserMessage-container {
+  width: 90%;
+  color: #8e8e93;
+  font-family: "SF Pro Text", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16.71px;
+  letter-spacing: -0.15px;
+  text-align: left;
+}
+
+.unread-count-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  background-color: #3ba55d;
+  border-radius: 50%;
+}
+
+.unread-count {
+  font-family: "SF Pro Text", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14.32px;
+  letter-spacing: -0.15px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.MenuVertical {
+  cursor: pointer;
+}
+
+/* Dropdown styles */
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  position: absolute;
+  right: 40%;
+  background-color: #ffffff;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.dropdown-content button {
+  width: 100%;
+  padding: 12px 16px;
+  font-family: "SF Pro Text", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+  color: #333333;
+  text-align: left;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-content button:hover {
+  background-color: #f1f1f1;
+}

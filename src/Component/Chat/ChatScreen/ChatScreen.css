@@ -1,0 +1,52 @@
+.chat-screen {
+  padding: 20px;
+  flex: 1;
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+}
+
+.message {
+  display: flex;
+  gap: 20px;
+  max-width:max-content;
+  background-color: #fafafa;
+  padding: 2px;
+  border-radius: 44px;
+  margin-top: 10px;
+
+  .texts {
+    margin-inline: 24px;
+    display: flex;
+    flex-direction: column;
+
+    p {
+      font-family: SF Pro Text;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 19.09px;
+      letter-spacing: -0.30000001192092896px;
+      text-align: left;
+      color: #000000;
+    }
+  }
+
+  .texts span {
+    align-self: flex-start;
+    font-family: SF Pro Text;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16.71px;
+    letter-spacing: -0.30000001192092896px;
+    color: #00000075;
+  }
+
+  &.own {
+    margin-left: auto;
+    background-color: #dcf7c5;
+
+    .texts span {
+      align-self: flex-end;
+    }
+  }
+}
