@@ -11,8 +11,9 @@ const ChatScreen = () => {
   const endRef = useRef(null);
 
   useEffect(() => {
-    setLoader(true);
+
     if (selectedUserId !== null) {
+      setLoader(true);
       const user = data.find((user) => user.userId === selectedUserId);
       setTimeout(() => {
         setLoader(false);
@@ -27,11 +28,7 @@ const ChatScreen = () => {
     }
   }, [filteredUser]);
 
-  if (!filteredUser) {
-    return (
-      <div className="chat-screen">No user selected or user not found</div>
-    );
-  }
+  console.log(loader,selectedUserId,"aayaya")
 
   return (
     <div className="chat-screen">
@@ -39,21 +36,29 @@ const ChatScreen = () => {
         <Loader />
       ) : (
         <>
-          {filteredUser.chat.map((chat, index) => (
-            <div key={index}>
-              {Object.entries(chat).map(([sender, messageData]) => (
-                <div
-                  className={`${sender === "you" ? "message own" : "message"}`}
-                  key={messageData.timeStamp}
-                >
-                  <div className="texts">
-                    <p>{messageData.message}</p>
-                    <span>{messageData.timeStamp}</span>
+          {filteredUser ? (
+            filteredUser?.chat?.map((chat, index) => (
+              <div key={index}>
+                {Object.entries(chat).map(([sender, messageData]) => (
+                  <div
+                    className={`${
+                      sender === "you" ? "message own" : "message"
+                    }`}
+                    key={messageData.timeStamp}
+                  >
+                    <div className="texts">
+                      <p>{messageData.message}</p>
+                      <span>{messageData.timeStamp}</span>
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
+            ))
+          ) : (
+            <div className="chat-screen">
+              No user selected or user not found
             </div>
-          ))}
+          )}
           <div ref={endRef}></div>
         </>
       )}
