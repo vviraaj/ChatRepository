@@ -1,25 +1,21 @@
-import React, { useState } from "react";
+import React from "react";
+import { useSelector } from "react-redux";
 import "./User.css";
 import ChatUser from "./ChatUsers/ChatUser";
-import data from "../../data";
 
-const User = ({ setActiveUserId }) => {
-  const [activeUserId, setActiveUserIdState] = useState(null);
- 
+const User = () => {
+  const users = useSelector((state) => state.user.users);
+  const activeUserId = useSelector((state) => state.user.activeUserId);
 
   return (
     <div className="user">
       <div className="user-container">
         <p className="title">Chat</p>
-        {data.map((user) => (
+        {users.map((user) => (
           <ChatUser
             key={user.userId}
             user={user}
             activeUserId={activeUserId}
-            setActiveUserId={(id) => {
-              setActiveUserIdState(id);
-              setActiveUserId(id);
-            }}
           />
         ))}
       </div>

@@ -4,12 +4,10 @@ import ChatTitle from "./ChatTitle/ChatTitle";
 import ChatScreen from "./ChatScreen/ChatScreen";
 import ChatSendMessage from "./ChatSendMessage/ChatSendMessage";
 
-const Chat = ({ activeUserId, setActiveUserId,isMobile }) => {
+const Chat = ({ isMobile }) => {
   return (
     <div className="chat">
-      
-
-      <ChatTitle activeUserId={activeUserId} setActiveUserId={setActiveUserId} isMobile={isMobile} />
+      <ChatTitle isMobile={isMobile} />
       <ChatScreen />
       <ChatSendMessage />
     </div>

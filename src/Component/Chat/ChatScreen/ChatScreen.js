@@ -5,7 +5,7 @@ import data from "../../../data";
 import Loader from "../../../Common/Loader";
 
 const ChatScreen = () => {
-  const selectedUserId = useSelector((state) => state.user.selectedUserId);
+  const selectedUserId = useSelector((state) => state.user.activeUserId);
   const [filteredUser, setFilteredUser] = useState(null);
   const [loader, setLoader] = useState(false);
   const endRef = useRef(null);
